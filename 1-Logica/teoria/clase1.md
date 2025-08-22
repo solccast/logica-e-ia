@@ -91,4 +91,57 @@ El valor de verdad de un enunciado compuesto depende del valor de verdad de los 
 
 #### Interpretación
 Es una función que relaciona los elementos del dominios sintáctico y semántico de la lógica considerada. 
-Minuto 53
+
+> A una forma enunciativa con n variables diferentes, le corresponde una función de verdad de n argumentos, y la tabla de verdad tendrá 2^n filas, una para cada una de las pobiles combinaciones de valores de verdad. Ej: 3 -> 2^3 = 8 
+
+
+## Razonamiento 
+Para analizar los razonamientos se usa el lenguaje formal de la lógica. Con éste se arman las premisas, el mecanismo de razonamiento y obtener conclusiones (nueva información). 
+El razonamiento puede ser: 
+- **Válido** o **correcto**: Si se parten de premisas verdaderas entonces la conclusión es necesariamente verdadera => **deducción**
+- **Incorrecto** o **inválido**: su construcción es defectuosa. 
+
+> “válido” ≠ “conclusión verdadera”. Una conclusión puede ser verdadera “de casualidad” aunque la forma sea mala; lo que mide la validez es la forma, no el contenido.
+
+### Silogismo hipotético 
+Estructura de conocimiento en el que se encadenan condicionales del tipo: 
+    p → q ,  q → r ⇒ p → r
+
+> un razonamiento válido no asegura verdad de la conclusión, salvo que además las premisas sean verdaderas.
+
+
+### Patrones de razonamiento frecuente 
+- **Modus Ponens**
+    𝑝 → 𝑞, 𝑝 ⇒ 𝑞
+    _Si estudio, apruebo. Estudio. ⇒ Apruebo._
+
+- **Modus Tollens**: si la consecuencia no ocurre, es imposible que el antecendente haya ocurrido
+    𝑝 → 𝑞, ¬𝑞 ⇒ ¬𝑝
+    _Si estudio, apruebo. No apruebo ⇒ No estudié_ 
+
+- **Silogismo Disyuntivo**: Una disyunción dice que al menos uno es verdadero; si eliminás uno, el otro queda forzado.
+    𝑝 ∨ 𝑞, ¬𝑝 ⇒ 𝑞
+    _O voy al cine o me quedo en casa, si no voy al cine entonces me quedo en casa_ 
+
+- **Silogismo Hipotético**: encadena condicionales
+    𝑝 → 𝑞, 𝑞 → 𝑟 ⇒ 𝑝 → 𝑟
+
+## Argumentación
+Una _argumentación_ es una sucesión finita de formas enunciativas (formulas bien formadas), de las cuales _la última se considera como la **conclusión** de las anteriores, conocidas como **premisas**_ 
+La notación es: 
+    Asub1, Asub2,..., Asub n entonces A 
+
+Bajo cualquier asignación de valores de verdad a las variables de enunciado, si las premisas toman el valor V, la conclusión A también debe tomar el valor V. 
+
+ 
+### Ejemplo simple de argumentación 
+Quiero probar que una argumentación es válida
+A1 = p -> q 
+A2 = q
+A = p
+
+La conclusión es falsa cuando p = F
+Si p = F:
+- En A1 no importa, sigue siendo válida 
+- En A2 es necesario que q = V 
+- Si p = F y q = V hace que A1 sea verdadera y A2 también, pero A es falsa, por lo tanto **todas las premisas son V y conclusión F**. Entonces, el razonamiento es **inválido**. 
